@@ -4,6 +4,7 @@ import 'package:flutterapp/Biometrics.dart';
 import 'package:flutterapp/Camera.dart';
 import 'package:flutterapp/Location.dart';
 import 'package:flutterapp/Notification.dart' as N;
+import 'package:flutterapp/Performance.dart';
 import 'package:flutterapp/Storage.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
@@ -24,17 +25,6 @@ class MyApp extends StatelessWidget {
         )
       ),
       home: Homepage(),
-    );
-  }
-}
-
-
-class Counter extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-    return (
-      Text("fsdf")
     );
   }
 }
@@ -106,6 +96,18 @@ class Homepage extends StatelessWidget {
                       expand: true,
                       bounce: true,
                       builder: (context) => N.Notification(),
+                    );
+                  },),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: CupertinoButton(child: Text("Performance"), onPressed: () {
+                    showCupertinoModalBottomSheet(
+                      backgroundColor: Colors.white,
+                      context: context,
+                      expand: true,
+                      bounce: true,
+                      builder: (context) => Performance(),
                     );
                   },),
                 ),
